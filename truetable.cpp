@@ -7,6 +7,7 @@ using namespace std;
 int main(int argc, char* argv[]){
     //first identify type of boolean
     std::string input = argv[1];
+    int length = input.length();
     //if And Gate
     if(input[1] == '.'){
         //number of input
@@ -25,6 +26,11 @@ int main(int argc, char* argv[]){
         }
         std::cout << argv[1] << std::endl;
 
+        for(int i = 0; i < 2*n + length; i++){
+        std::cout << "_";
+        }
+        std::cout << std::endl;
+
         int end = pow(2, n);
     for(int i=0; i< end; i++){
         char output[n];
@@ -36,8 +42,12 @@ int main(int argc, char* argv[]){
             output[j] = 'T';
             }
         }
-        for(int j = 0; j < n; j++){
+        for(int j = n-1; j > -1; j--){
             std::cout << output[j] << " ";
+        }
+        
+        for(int j = 0; j < length/2; j++){
+            std::cout << " ";
         }
         if(i == end -1)
         std::cout << "T" << std::endl;
@@ -61,6 +71,11 @@ int main(int argc, char* argv[]){
             std::cout << inputArray[i] << " ";
         }
         std::cout << argv[1] << std::endl;
+        
+        for(int i = 0; i < 2*n + length; i++){
+        std::cout << "_";
+        }
+        std::cout << std::endl;
 
         int end = pow(2, n);
 
@@ -74,8 +89,11 @@ int main(int argc, char* argv[]){
                 output[j] = 'T';
                 }
             }
-            for(int j = 0; j < n; j++){
+            for(int j = n-1; j > -1; j--){
                 std::cout << output[j] << " ";
+            }
+            for(int j = 0; j < length/2 ; j++){
+            std::cout << " ";
             }
             if(i == 0)
             std::cout << "F" << std::endl;
