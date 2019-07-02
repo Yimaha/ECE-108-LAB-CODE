@@ -88,7 +88,7 @@ bool LogicEvaluation(int** evaluation, int num_logic, int num_variables, std::st
         for(int j = 0; j < num_variables; j++){
             //if it reaches 0, then rest are 0 too, which is pointless to evaluate
             if(evaluation[i][j] == 0)
-               break;
+                break;
             //if variable matches, "or" statement is true, therefore we can move on to the next clause
             if(evaluation[i][j] == current_variables[abs(evaluation[i][j]) - 1]){
                 logic_pass = true;
@@ -99,6 +99,7 @@ bool LogicEvaluation(int** evaluation, int num_logic, int num_variables, std::st
         if(!logic_pass)
             return false;
     }
+    //all logic pass means a true return
     return true;
 }
 
